@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  /* Warna latar biru */
+  background: linear-gradient(135deg, #3aa3ff, #1a62d1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  /* Warna latar kontainer */
+  background: linear-gradient(145deg, #4a9dff, #2473e5);
+  width: 320px;
+  border-radius: 25px;
+  padding: 20px 24px 32px 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  width: 24px; 
+}
+
+/* KELAS UNTUK MENENGAHKAN JUDUL */
+.title-group {
+    flex-grow: 1; 
+    text-align: center;
+    margin: 0 10px; 
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+
+.subtitle {
+  font-size: 10px; 
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  margin-top: 0;
+  opacity: 0.8;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  /* Warna hijau saat ON */
+  background-color: #4cd964;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.temp-status {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ac-icon {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+.current-temp {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.outside-temp {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.temp-control {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* --- DIAL (LINGKARAN PUTIH) --- */
+.dial {
+  width: 160px;
+  height: 160px;
+  background: white; /* Warna dasar PUTIH */
+  border-radius: 50%;
+  position: relative;
+  box-shadow:
+    inset 0 2px 5px rgba(0,0,0,0.1),
+    0 10px 20px rgba(0,0,0,0.1);
+  user-select: none;
+  /* Transisi opacity untuk efek redup/terang */
+  transition: opacity 0.4s ease;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #f5f8fd;
+  box-shadow: inset 0 2px 10px #cbd9ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.temp-display {
+  font-size: 36px;
+  font-weight: 700;
+  color: #263238;
+}
+
+.model-text {
+  font-size: 14px;
+  color: #78909c;
+  margin-top: 8px;
+}
+
+.modes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mode-btn {
+  flex: 1;
+  background: white;
+  border-radius: 16px;
+  margin: 0 6px;
+  padding: 16px;
+  color: #263238;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.mode-btn:hover {
+  background-color: #e1e8ff;
+}
+
+.mode-btn .icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: #2979ff;
+}
+/* --- CSS Tambahan untuk Pop-up dan Overlay --- */
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Default tersembunyi */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 85%;
+    max-width: 300px;
+    color: #263238;
+}
+
+.popup-content h3 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#timeInput {
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.popup-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.popup-actions button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#popup-yes, #setTimerConfirm {
+    background-color: #4cd964; /* Hijau */
+    color: white;
+}
+
+#popup-no, #setTimerCancel {
+    background-color: #f0f0f0;
+    color: #263238;
+}
+
+#popup-yes:hover, #setTimerConfirm:hover {
+    background-color: #3aa84f;
+}
+
+#popup-no:hover, #setTimerCancel:hover {
+    background-color: #ddd;
+}
+

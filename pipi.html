@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minimalist Lamp Timer</title>
+  <link rel="stylesheet" href="pipi.css" />
+</head>
+<body>
+  
+  <div class="container">
+    <header>
+      <div style="width: 24px;"></div> 
+      
+      <div class="title-group">
+        <div class="title">StepWEB</div>
+        <div class="subtitle">BY StepVolt</div>
+      </div>
+      
+      <div style="width: 42px;"></div>
+    </header>
+
+    <div class="temp-status">
+      <div class="ac-icon">&#9889;</div> 
+      <div class="current-temp">
+        <span id="temp-main">3.7</span>V
+      </div>
+      <div class="outside-temp">75% Battery | Discharging</div> 
+    </div>
+
+    <div class="temp-control">
+      <div class="dial" id="tempDial">
+        <div class="circle">
+          <div class="temp-display">
+            <span id="dial-temp">OFF</span> 
+          </div>
+          <div class="model-text" id="countdown-text">Lampu</div> 
+        </div>
+      </div>
+    </div>
+
+    <div class="modes">
+      
+      <button class="mode-btn" id="manualLight">
+        <div class="icon">&#128161;</div>
+        <span>Lampu Manual</span>
+      </button>
+      
+      <button class="mode-btn" id="setTimer">
+        <div class="icon">&#128337;</div>
+        <span>Set Timer</span>
+      </button>
+
+    </div>
+  </div>
+
+  <div class="popup-overlay" id="confirmPopup">
+    <div class="popup-content">
+        <p id="popup-message">Apakah Anda yakin ingin menyalakan lampu sekarang?</p>
+        <div class="popup-actions">
+            <button id="popup-yes">Ya</button>
+            <button id="popup-no">Tidak</button>
+        </div>
+    </div>
+  </div>
+
+  <div class="popup-overlay" id="timePickerPopup">
+    <div class="popup-content">
+        <h3>Atur Waktu Nyala Lampu</h3>
+        <input type="time" id="timeInput" value="18:00" />
+        <div class="popup-actions">
+            <button id="setTimerConfirm">Set Timer</button>
+            <button id="setTimerCancel">Batal</button>
+        </div>
+    </div>
+  </div>
+
+  <script src="pipi.js"></script>
+</body>
+</html>
