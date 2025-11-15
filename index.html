@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Minimalist Lamp Timer</title>
+  <title>StepWEB Lampu Kontrol</title>
   <link rel="stylesheet" href="pipi.css" />
 </head>
 <body>
@@ -17,15 +17,15 @@
         <div class="subtitle">BY StepVolt</div>
       </div>
       
-      <div style="width: 42px;"></div>
+      <div style="width: 24px;"></div>
     </header>
 
     <div class="temp-status">
       <div class="ac-icon">&#9889;</div> 
       <div class="current-temp">
-        <span id="temp-main">3.7</span>V
+        <span id="temp-main">3.7V</span>
       </div>
-      <div class="outside-temp">75% Battery | Discharging</div> 
+      <div class="outside-temp">75% Battery | Menunggu Data</div> 
     </div>
 
     <div class="temp-control">
@@ -75,6 +75,8 @@
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+  
   <script src="pipi.js"></script>
 </body>
 </html>
